@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+body {
+    background: #fcf5f5;
+    font-family: League Spartan;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+    max-width: 100vw;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+/* CABEÇALHO "PORTFÓLIO IDAM 2024" */
+header {
+    text-align: center;
+    padding: 20px 0 10px; /* Reduzindo o preenchimento inferior para 10px */
+    background-color: #37808d ; /* Cor de fundo verde escuro */
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+header h1 {
+    display: inline-block;
+    color: #F6F7FB; /* Cor do texto branco */
+    margin: 0 100px; /* Remove as margens padrão */
+    font-size: 35px;
+    text-align: left;
+}
+
+.logo-header {
+    width: 75px;
+    height: auto;
+    margin-right: 10px;
+}
+
+
+
+
+/* OPÇÕES DE NOMES DO MUNICIPIO" */
+
+.class-select{
+    height: 40px;
+    width: 120px;
+    padding: 10px 10px;
+    border-radius: 30px;
+    color: #F6F7FB;
+    background-color: #37808d;
+}
+
+select {
+    position: absolute; /* Torna o select um elemento de posição absoluta */
+    left: 50%; /* Alinha o select ao centro horizontal do header */
+    bottom: 680px; /* Alinha o select ao fundo do header */
+    transform: translateX(-395%);
+    z-index: 9999;
+}
+
+select:focus {
+    outline: none; 
+    border-color: #1f5963; 
+    box-shadow: 0 0 5px rgba(20, 73, 122, 0.5); 
+}
+
+/*MAPA SVG*/
+
+path {
+    stroke: rgba(0, 0, 0, 0.24);
+    stroke-width: 0.3px;
+}
+
+#Alvarães, #Juruá, #Fonte_Boa, #Maraã, #Tefé,
+#Jutaí, #Japurá, #Uarini {
+        fill: #f6f3d3; /* Azul, por exemplo */
+}
+
+#state-boca-do-acre, #Pauini, #Lábrea, #Tapauá, #state-atalaia-do-norte, #state-benjamin-constant, #state-sao-paulo-de-olivença, 
+#Tonantins, #Amaturá, #state-santo-antonio-do-ica, #Tabatinga, #Canutama{
+    fill: #f7ec8e;
+
+}
+
+#Guajará,#Ipixuna, #Envira, #Eirunepé, #Itamarati, #Carauari {
+    fill:  #e3ecf4;
+}
+
+
+#Barcelos, #state-sao-gabriel, #state-santa-isabel-do-rio-negro {
+    fill: #c4e4e8 ;
+}
+
+#state-novo-airao,  #Codajás, #Coari, #Beruri, #Manaquiri, #Anori, #Manaus, #state-rio-preto-da-eva, #Iranduba,
+#Caapiranga, #Manacapuru, #Anamã, #Careiro, #state-careiro-da-varzea {
+    fill: #d6e8d1
+}
+
+
+#Urucará, #Nhamundá, #Parintins, #Barreirinha, #state-sao-sebastiao-do-uatuma{
+    fill: #add2f0
+}
+
+#Maués, #Itapiranga, #Autazes, #state-presidente-figueiredo, #Itacoatiara, #state-boa-vista-do-ramos, 
+#Urucurituba, #Silves, #state-nova-olinda-do-norte {
+    fill: #f7f0c1
+}
+
+#Humaitá, #Manicoré, #Apuí, #Borba, #state-novo-aripuana {
+    fill: #f5debb;
+}
+
+
+.mapa-svg-estados {
+    fill: #10843c;
+    -webkit-transition: .8s ease;
+    -moz-transition: .8s ease;
+    -ms-transition: .8s ease;
+    -o-transition: .8s ease;
+    transition: .8s ease;
+}
+
+.mapa-svg-estados:hover {
+    /*opacity: 0.6;*/
+    cursor: pointer;
+    stroke:#ff0000;
+    fill: #0a5014;
+    stroke-dashoffset: 100%;
+    stroke-width: 1.5px
+}
+
+
+
+.mapa-svg-estados-active {
+    cursor: pointer;
+    stroke: #ff0000;
+    stroke-dashoffset: 0%;
+    stroke-width: 1px;
+}
+
+
+
+.mapa-div {
+    width: 100%;
+    height: auto;
+    margin: 0 auto 50px; /* Ajuste a margem inferior para mover o SVG para cima */
+    position: relative;
+}
+
+.mapa-div svg{
+    width: 70%;
+    height: auto;
+    margin-left: 200px;
+}
+
+/* RODAPÉ GOVERNO DO ESTADO */
+
+.logo-container {
+    position: relative; /* Adiciona posicionamento absoluto */
+    left: 83%; /* Move a logo-container para a metade do contêiner pai */
+    transform: translateX(-38%); /* Desloca a logo-container para a esquerda pela metade de sua própria largura */
+    bottom: -3px; /* Ajusta a distância entre a logo-sepror e o mapa-div */
+}
+
+.logo-sepror {
+    width: 300px;
+    height: auto;
+}
+
+/* nome dos municipios ao passar o mouse */
+.tooltip {
+    pointer-events: none;
+    position: absolute;
+    font-size: 15px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.459);
+    padding: 10px 15px;
+    z-index: 5;
+    height: 20px;
+    line-height: 20px;
+    margin: 0 auto;
+    color: #fafafa;
+    border-radius: 5px;
+    transform: translate(-50%, -100%);;
+    display: none;
+    text-decoration: none;
+    pointer-events: none; /* Isso permite que os eventos passem através da legenda */
+
+  }
+  .tooltip.active {
+    display: block;
+  }
+  .tooltip:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
+  
+
+/*RESPONSIVIDADE */
+
+
+@media screen and (max-width: 1200px) {
+
+
+    body {
+        overflow: hidden; 
+    }
+
+  
+    .logo-header {
+        width: 75px; 
+        height: auto;
+        margin-right: 0; 
+        margin-bottom: 10px; /* Adiciona espaço entre o título e a logo */
+    }
+
+    header {
+        flex-direction: column; /* Altera a direção do flexbox para coluna em dispositivos móveis */
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    header h1 {
+        font-size: 30px;
+        margin: 0; /* Remove as margens do título */
+    }
+
+    .mapa-div svg{
+        width: 100%;
+        margin-left: -25px;
+    }
+    
+    .mapa-div {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 120px;
+    }
+
+    .logo-container {
+        position: absolute; /* Adiciona posicionamento absoluto */
+        left: 43%; /* Move a logo-container para a metade do contêiner pai */
+        right: 0; /* Move a logo-container para a metade do contêiner pai */
+        transform: translateX(-50%); /* Desloca a logo-container para a esquerda pela metade de sua própria largura */
+        bottom: -320px; /* Ajusta a distância entre a logo-sepror e o mapa-div */
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+
+    body {
+        overflow-x: hidden; /* Remover a rolagem horizontal */
+        overflow-y: hidden; /* Remover a rolagem vertical */
+        max-width: 100%; /* Definir largura máxima */
+    }
+    
+    select {
+        position: absolute; /* Torna o select um elemento de posição absoluta */
+        left: 50%; /* Alinha o select ao centro horizontal do header */
+        bottom: 750px; /* Alinha o select ao fundo do header */
+        transform: translateX(-50%); /* Move o select para a esquerda em 50% da sua largura */
+    }
+
+    header {
+        flex-direction: column; /* Altera a direção do flexbox para coluna em dispositivos móveis */
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+    
+    .mapa-div svg{
+        width: 100%;
+        height: auto;
+    }
+
+    .mapa-div {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 120px;
+    }
+
+    .logo-container {
+        position: absolute; 
+        left: 43%; 
+        right: 0;  
+        transform: translateX(-50%);  
+        bottom: -320px; 
+    }
+}
+
+
