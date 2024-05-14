@@ -42,12 +42,33 @@ header h1 {
     margin-right: 10px;
 }
 
+/* "frase de orientação de uso" */
+
+.aviso-container{
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    transform: translate(50%, 10%);
+    height: 30px;
+    width: 200px;
+    border-radius: 30px;
+    color: #F6F7FB;
+    background-color: #37808d;
+    white-space: nowrap; /* Impede quebrar a linha */
+    display: flex; /* Usando flexbox para alinhar itens */
+    justify-content: center; /* Centralizando horizontalmente */
+    align-items: center; 
+}
+.aviso-container h4 {
+    margin: 30px 0 25px; 
+}
+
 
 
 
 /* OPÇÕES DE NOMES DO MUNICIPIO" */
 
-.class-select{
+.class-select {
     height: 40px;
     width: 120px;
     padding: 10px 10px;
@@ -57,9 +78,9 @@ header h1 {
 }
 
 select {
-    position: absolute; /* Torna o select um elemento de posição absoluta */
-    left: 50%; /* Alinha o select ao centro horizontal do header */
-    bottom: 680px; /* Alinha o select ao fundo do header */
+    position: absolute; 
+    left: 50%; 
+    bottom: 680px;
     transform: translateX(-395%);
     z-index: 9999;
 }
@@ -156,7 +177,8 @@ path {
 .mapa-div svg{
     width: 70%;
     height: auto;
-    margin-left: 200px;
+    margin-left: 200px; /* Mantenha a margem esquerda para a posição horizontal */
+    margin-top: 15px; /* Ajuste a margem superior para descer o SVG */
 }
 
 /* RODAPÉ GOVERNO DO ESTADO */
@@ -171,6 +193,7 @@ path {
 .logo-sepror {
     width: 300px;
     height: auto;
+    margin-top: -15px;
 }
 
 /* nome dos municipios ao passar o mouse */
